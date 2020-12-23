@@ -43,19 +43,19 @@ ExchangeOrder exchangeOrderZ = new ExchangeOrder("iIdX","eIDX",2)
 #Приложение для решения 2 задачи [Java 11]
 1.Создание класса ExchangeOrder
 2.Создание класса MyThread который имплементирует интерфейс Runnable
-3.Использовать CountDownLatch чтоб все потоки стартовали вместе
+3.Использовать CountDownLatch чтобы все потоки стартовали вместе
 4.Предполажить что между exchangeOrderId and internalOrderId one-to-one связь
 5.Создать класс TradeAcceptor and implement acceptTradeData(Object tradeObject) method
-6.Создать синхронную версию и тестировать
-7.Тестировать асинхронную версию
+6.Создать синхронизированную версию и тестировать
+7.Тестировать асинхронизированную версию
 8.Refactoring if needed
 #Описание взаимодействия модулей
-1.Main.java создаеть обьекты ExchangeOrder и вызываеть синхронную и асинхронную версию acceptTradeData(Object tradeObject)
+1.Main.java создает обьекты ExchangeOrder и вызывает синхронизированную и асинхронизированную версию acceptTradeData(Object tradeObject)
 2.При вызове асинхронной версий, создаеть потоки MyThread.java количество который равна количестку обьектов ExchangeOrder
 3.После комманды старта для всех потоков, каждый поток вызываеть метод acceptTradeData(Object tradeObject)
 #Описание реализации модулей
 1.Main.java создаеть обьекты и вызываеть методы
 2.ExchangeOrder.java хранить информацию
-3.MyThread.java implements Runnable interface, takes as input CountDownLatch latch and ExchangeOrder exchangeOrder,
-CountDownLatch нужен чтобы все потоки начали одновременно, ExchangeOrder передаеться методу acceptTradeData
+3.MyThread.java implements Runnable interface, takes as input CountDownLatch and ExchangeOrder,
+CountDownLatch нужен чтобы все потоки начали одновременно; ExchangeOrder передаеться методу acceptTradeData
 4.TradeAcceptor.java хранить информацию в ConcurrentHashMap для многопоточного доступа
