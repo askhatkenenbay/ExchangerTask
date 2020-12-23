@@ -49,10 +49,12 @@ ExchangeOrder exchangeOrderZ = new ExchangeOrder("iIdX","eIDX",2)
 6.Создать синхронную версию и тестировать
 7.Тестировать асинхронную версию
 8.Refactoring if needed
+
 #Описание взаимодействия модулей
 1.Main.java создаеть обьекты ExchangeOrder и вызываеть синхронную и асинхронную версию acceptTradeData(Object tradeObject)
 2.При вызове асинхронной версий, создаеть потоки MyThread.java количество который равна количестку обьектов ExchangeOrder
 3.После комманды старта для всех потоков, каждый поток вызываеть метод acceptTradeData(Object tradeObject)
+
 #Описание реализации модулей
 1.Main.java создаеть обьекты и вызываеть методы
 2.ExchangeOrder.java хранить информацию
