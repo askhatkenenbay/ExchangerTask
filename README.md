@@ -55,12 +55,12 @@ ExchangeOrder exchangeOrderZ = new ExchangeOrder("iIdX","eIDX",2)
 6. Создать синхронизированную версию и тестировать
 7. Тестировать асинхронизированную версию
 
-8.Refactoring if needed
+8. Refactoring if needed
 
 
 #Описание взаимодействия модулей
 
-1.Main.java создает объекты ExchangeOrder и вызывает синхронизированную и асинхронизированную версию acceptTradeData(Object tradeObject)
+1. Main.java создает объекты ExchangeOrder и вызывает синхронизированную и асинхронизированную версию acceptTradeData(Object tradeObject)
 
 2. При вызове асинхронной версий, создаёт потоки MyThread.java количество который равна количеству объектов ExchangeOrder
 
@@ -69,12 +69,12 @@ ExchangeOrder exchangeOrderZ = new ExchangeOrder("iIdX","eIDX",2)
 
 #Описание реализации модулей
 
-1.Main.java создаёт объекты и вызывает методы
+1. Main.java создаёт объекты и вызывает методы
 
-2.ExchangeOrder.java хранить информацию
+2. ExchangeOrder.java хранить информацию
 
-3.MyThread.java implements Runnable interface, takes as input CountDownLatch and ExchangeOrder,
+3. MyThread.java implements Runnable interface, takes as input CountDownLatch and ExchangeOrder,
 CountDownLatch нужен чтобы все потоки начали одновременно; ExchangeOrder передаётся методу acceptTradeData
 
-4.TradeAcceptor.java хранить информацию в ConcurrentHashMap для многопоточного доступа
+4. TradeAcceptor.java хранить информацию в ConcurrentHashMap для многопоточного доступа
 
